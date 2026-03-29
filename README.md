@@ -1,4 +1,7 @@
 # ConTeXt IDE
+> [!IMPORTANT]
+> As I lost my 2FA-Stuff from my old account, I needed to create a new one. https://github.com/WelterDevelopment/ConTeXt-IDE-WinUI is no longer maintained and the project has completely moved to this new account.
+
 This is an IDE for the ConTeXt/LuaMetaTeX typesetting system. It is written in C# 9 / .NET 6 with the Windows App SDK 1.6 framework using only controls from the UI library WinUI 3. In the future, it *might* be possible to turn this into a .NET MAUI app that runs cross-platform on Windows, MacOS and (highly unlikely) also on Linux.
 
 ![Screenshot_App](https://raw.githubusercontent.com/WelterDevelopment/ConTeXt-IDE-WinUI/main/Scr_Editor.png)
