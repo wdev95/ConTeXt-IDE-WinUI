@@ -1,0 +1,24 @@
+﻿<Window
+	xmlns:IDE="using:ConTeXt_IDE"
+    x:Class="ConTeXt_IDE.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+	mc:Ignorable="d" >
+
+
+	<Grid HorizontalAlignment="Stretch" DataContext="{x:Bind VM}" RequestedTheme="{Binding Default.Theme, Converter={StaticResource StringToTheme}, Mode=OneWay}"  >
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+		<Grid Visibility="Visible" Grid.Row="0"   x:Name="CustomDragRegion"  IsHitTestVisible="False" Background="{Binding AccentBrushLow, Source={StaticResource AccentColorSetting}, Mode=OneWay}">
+			<Grid.BackgroundTransition>
+				<BrushTransition/>
+			</Grid.BackgroundTransition>
+		</Grid>
+		<Frame Grid.Row="1" Loaded="RootFrame_Loaded" x:FieldModifier="public" x:Name="RootFrame" ></Frame>
+
+	</Grid>
+</Window>

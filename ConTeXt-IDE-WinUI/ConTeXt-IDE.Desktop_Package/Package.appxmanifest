@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Package
+  xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+		xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+  xmlns:uap2="http://schemas.microsoft.com/appx/manifest/uap/windows10/2"
+  xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3"
+  xmlns:uap15="http://schemas.microsoft.com/appx/manifest/uap/windows10/15"
+		  xmlns:desktop="http://schemas.microsoft.com/appx/manifest/desktop/windows10"
+  xmlns:desktop4="http://schemas.microsoft.com/appx/manifest/desktop/windows10/4"
+  xmlns:desktop5="http://schemas.microsoft.com/appx/manifest/desktop/windows10/5"
+  xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
+  IgnorableNamespaces="uap rescap">
+
+ <Identity
+	Name="7614MasterDevelopment.ConTeXtIDE"
+	Publisher="CN=F3B9189F-4D2B-4342-889D-A9D7D5A98D3A"
+	Version="2.4.5.0" />
+
+ <Properties>
+  <DisplayName>ConTeXt IDE</DisplayName>
+  <PublisherDisplayName>WDev</PublisherDisplayName>
+  <Logo>Assets\StoreLogo.png</Logo>
+ </Properties>
+
+ <Dependencies>
+  <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.17763.0" MaxVersionTested="10.0.22000.0" />
+  <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.17763.0" MaxVersionTested="10.0.22000.0" />
+ </Dependencies>
+
+ <Resources>
+  <Resource Language="x-generate"/>
+ </Resources>
+
+ <Applications>
+  <Application Id="App"
+	 Executable="$targetnametoken$.exe"
+	 EntryPoint="$targetentrypoint$">
+	<Extensions>
+	 <uap:Extension Category="windows.protocol">
+	  <uap:Protocol Name="contextide" />
+	 </uap:Extension>
+	 <uap3:Extension Category="windows.fileTypeAssociation">
+	  <uap3:FileTypeAssociation Name="context">
+		<uap:SupportedFileTypes>
+		 <uap:FileType>.tex</uap:FileType>
+		 <uap:FileType>.mkvi</uap:FileType>
+		 <uap:FileType>.mklx</uap:FileType>
+		</uap:SupportedFileTypes>
+		<uap:Logo>Assets/Logo_icon_2025_File.png</uap:Logo>
+	  </uap3:FileTypeAssociation>
+	 </uap3:Extension>
+	 <desktop4:Extension Category="windows.fileExplorerContextMenus">
+	  <desktop4:FileExplorerContextMenus>
+		<desktop5:ItemType Type="Directory">
+		 <desktop5:Verb Id="Command1" Clsid="CC19E147-7757-483C-B27F-3D81BCEB38FE" />
+		</desktop5:ItemType>
+	  </desktop4:FileExplorerContextMenus>
+	 </desktop4:Extension>
+	</Extensions>
+	<uap:VisualElements
+	  DisplayName="ConTeXt IDE"
+	  Description="Simple and self-contained IDE for the ConTeXt typesetting system."
+	  BackgroundColor="transparent"
+	  Square150x150Logo="Assets\Square150x150Logo.png"
+	  Square44x44Logo="Assets\Square44x44Logo.png">
+	 <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png"  Square71x71Logo="Assets\SmallTile.png" Square310x310Logo="Assets\LargeTile.png" ShortName="ConTeXt IDE">
+	  <uap:ShowNameOnTiles>
+		<uap:ShowOn Tile="square310x310Logo"/>
+		<uap:ShowOn Tile="wide310x150Logo"/>
+	  </uap:ShowNameOnTiles>
+	 </uap:DefaultTile >
+	 <uap:SplashScreen Image="Assets\SplashScreen.png" />
+	</uap:VisualElements>
+  </Application>
+ </Applications>
+
+ <Capabilities>
+  <rescap:Capability Name="runFullTrust" />
+ </Capabilities>
+</Package>
+

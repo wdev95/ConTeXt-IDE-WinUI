@@ -1,0 +1,216 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net10.0-windows10.0.26100.0</TargetFramework>
+		<TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+		<RootNamespace>ConTeXt_IDE</RootNamespace>
+		<ApplicationManifest>app.manifest</ApplicationManifest>
+		<Platforms>x86;x64;ARM64</Platforms>
+		<RuntimeIdentifiers>win-x86;win-x64;win-arm64</RuntimeIdentifiers>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<UseWinUI>true</UseWinUI>
+		<Nullable>enable</Nullable>
+		<ApplicationIcon>Square44x44Logo.ico</ApplicationIcon>
+		<LangVersion>preview</LangVersion>
+		<!--<UseRidGraph>true</UseRidGraph>-->
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)'=='Debug'">
+	  <Optimize>False</Optimize>
+	  <WarningLevel>2</WarningLevel>
+	  <NoWarn>CS1998;CS4014</NoWarn>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)'=='Release'">
+	  <WarningLevel>2</WarningLevel>
+	  <NoWarn>CS1998;CS4014</NoWarn>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
+	  <Optimize>False</Optimize>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+	  <Optimize>False</Optimize>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
+	  <Optimize>False</Optimize>
+	</PropertyGroup>
+	<ItemGroup>
+	  <Page Remove="App.xaml" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Content Include="About.md">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Square44x44Logo.ico" />
+	  <Content Include="Templates\cv\env_cv.tex">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Templates\cv\fa-brands-400.ttf">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Templates\cv\fa-regular-400.ttf">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Templates\cv\fa-solid-900.ttf">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Templates\cv\prd_cv.tex">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Templates\markdown\components\c_0_frontpart.tex">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Templates\markdown\env_markdown.tex">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Templates\markdown\literature.lua">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Templates\markdown\prd_markdown.md">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Templates\markdown\prd_markdown.tex">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Templates\mwe\c_main.tex">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Templates\projpres\env_presentation.tex">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Templates\projpres\env_script.tex">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Templates\projpres\literature.lua">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Templates\projpres\p-present-steps.tex">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Templates\projpres\prd_presentation.tex">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Templates\projthes\components\c_0_frontpart.tex">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Templates\projthes\components\c_1_section1.tex">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Templates\projthes\components\c_2_section2.tex">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Templates\projthes\components\c_3_section3.tex">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Templates\projthes\env_thesis.tex">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Templates\projthes\literature.lua">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Templates\projthes\prd_thesis.tex">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Templates\single\prd_main.tex">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="CommunityToolkit.Labs.WinUI.Controls.MarkdownTextBlock" Version="0.1.251008-build.2333" />
+		<PackageReference Include="CommunityToolkit.WinUI.Animations" Version="8.2.251219" />
+		<PackageReference Include="CommunityToolkit.WinUI.Controls.Primitives" Version="8.2.251219" />
+		<PackageReference Include="CommunityToolkit.WinUI.Controls.Segmented" Version="8.2.251219" />
+		<PackageReference Include="CommunityToolkit.WinUI.Controls.SettingsControls" Version="8.2.251219" />
+		<PackageReference Include="CommunityToolkit.WinUI.Controls.Sizers" Version="8.2.251219" />
+		<PackageReference Include="Microsoft.Graphics.Win2D" Version="1.4.0" />
+		<PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.7705" />
+		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.8.260317003" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
+		<Manifest Include="$(ApplicationManifest)" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\..\CodeEditorContol-WinUI\CodeEditorControl-WinUI\CodeEditorControl-WinUI.csproj" />
+		<ProjectReference Include="..\..\..\PDFjs.WinUI\PDFjs.WinUI\PDFjs.WinUI.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ApplicationDefinition Update="App.xaml">
+	    <SubType>Designer</SubType>
+	  </ApplicationDefinition>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="App.xaml.cs">
+	    <DependentUpon>App.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="IconText.xaml.cs">
+	    <DependentUpon>IconText.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="MainWindow.xaml.cs">
+	    <DependentUpon>MainWindow.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\MainPage.xaml.cs">
+	    <DependentUpon>MainPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\PDFWindowViewer.xaml.cs">
+	    <DependentUpon>PDFWindowViewer.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\SelectFolder.xaml.cs">
+	    <DependentUpon>SelectFolder.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\SelectNew.xaml.cs">
+	    <DependentUpon>SelectNew.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\SelectTemplate.xaml.cs">
+	    <DependentUpon>SelectTemplate.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Update="Assets\GitHub.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Update="Templates\markdown\pictures\NyquistPlot1.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Update="Templates\projthes\pictures\NyquistPlot1.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Page Update="IconText.xaml">
+	    <SubType>Designer</SubType>
+	  </Page>
+	  <Page Update="MainWindow.xaml">
+	    <SubType>Designer</SubType>
+	  </Page>
+	  <Page Update="Ribbon.xaml">
+	    <SubType>Designer</SubType>
+	  </Page>
+	</ItemGroup>
+
+	<!--<Import Project="..\..\..\ConTeXt-IDE-WinUI\ConTeXt-IDE.Shared\ConTeXt-IDE.Shared.projitems" Label="Shared" />-->
+
+	<!-- Workaround: WAP packaging project expects shared-project XBF files in bin root,
+		  but the XAML compiler places them in subdirectories (Views\, Models\).
+		  Copy them flat so the packaging build can find them. -->
+   <Target Name="CopyXbfToRoot" AfterTargets="CopyGeneratedXaml">
+		<ItemGroup>
+			<_XbfInSubDirs Include="$(OutputPath)Views\*.xbf;$(OutputPath)Models\*.xbf" />
+		</ItemGroup>
+		<Copy SourceFiles="@(_XbfInSubDirs)" DestinationFolder="$(OutputPath)" SkipUnchangedFiles="true" />
+   </Target>
+
+   <!-- Ensure WinUI compiled XAML binaries are part of publish items used by WAP packaging. -->
+	<!--<Target Name="IncludeXbfInPublishItems" BeforeTargets="ComputeFilesToPublish">
+		<ItemGroup>
+			<_XbfPublish Include="$(IntermediateOutputPath)*.xbf;$(IntermediateOutputPath)Views\*.xbf;$(IntermediateOutputPath)Models\*.xbf;$(IntermediateOutputPath)CodeEditorControl-WinUI\*.xbf;$(IntermediateOutputPath)PDFjs.WinUI\*.xbf" />
+			<ResolvedFileToPublish Include="@(_XbfPublish)">
+				<RelativePath>%(RecursiveDir)%(Filename)%(Extension)</RelativePath>
+				<CopyToPublishDirectory>Always</CopyToPublishDirectory>
+			</ResolvedFileToPublish>
+		</ItemGroup>
+	</Target>-->
+
+</Project>
