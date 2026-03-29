@@ -11,9 +11,9 @@ The app can be installed via the Microsoft store on x64/x86 devices with Windows
 
 ## Testing & Contribution
 
-- pull https://github.com/WelterDevelopment/PDFjs.WinUI in Visual Studio (e.g. to c:\ConTeXtIDE\PDFjs.WinUI)
-- pull https://github.com/WelterDevelopment/CodeEditorContol-WinUI in Visual Studio (e.g. to c:\ConTeXtIDE\CodeEditorContol-WinUI)
-- pull this repo (https://github.com/WelterDevelopment/ConTeXt-IDE-WinUI) in Visual Studio (e.g. to c:\ConTeXtIDE\ConTeXt-IDE-WinUI)
+- pull https://github.com/wdev95/PDFjs.WinUI in Visual Studio (e.g. to c:\ConTeXtIDE\PDFjs.WinUI)
+- pull https://github.com/wdev95/CodeEditorContol-WinUI in Visual Studio (e.g. to c:\ConTeXtIDE\CodeEditorContol-WinUI)
+- pull this repo (https://github.com/wdev95/ConTeXt-IDE-WinUI) in Visual Studio (e.g. to c:\ConTeXtIDE\ConTeXt-IDE-WinUI)
 - now that all 3 projects are in the same root folder, you should be able to open the solution file C:\ConTeXtIDE\ConTeXt-IDE-WinUI\ConTeXt-IDE-WinUI.sln
 - if you see errors in the solution explorer, add the corresponding .csproj files manually
 
