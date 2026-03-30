@@ -22,11 +22,11 @@
     </ProjectConfiguration>
     <ProjectConfiguration Include="Debug|arm64">
       <Configuration>Debug</Configuration>
-      <Platform>ARM64</Platform>
+      <Platform>arm64</Platform>
     </ProjectConfiguration>
     <ProjectConfiguration Include="Release|arm64">
       <Configuration>Release</Configuration>
-      <Platform>ARM64</Platform>
+      <Platform>arm64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup>
@@ -34,7 +34,7 @@
     <PathToXAMLWinRTImplementations>ConTeXt-IDE.Desktop\</PathToXAMLWinRTImplementations>
     <RidForPlatform Condition="'$(Platform)'=='x64'">win-x64</RidForPlatform>
     <RidForPlatform Condition="'$(Platform)'=='x86'">win-x86</RidForPlatform>
-    <RidForPlatform Condition="'$(Platform)'=='ARM64'">win-arm64</RidForPlatform>
+    <RidForPlatform Condition="'$(Platform)'=='arm64'">win-arm64</RidForPlatform>
   </PropertyGroup>
   <Import Project="$(WapProjPath)\Microsoft.DesktopBridge.props" />
   <PropertyGroup>
