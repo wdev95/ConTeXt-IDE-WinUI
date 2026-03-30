@@ -313,21 +313,29 @@
 			  </StackPanel>
 			 </Button.Content>
 			</Button>
-			<ListView MaxWidth="300" ItemsSource="{Binding Default.ProjectList}" IsItemClickEnabled="True" SelectionMode="None" ItemClick="ProjectsList_ItemClick" >
+			<ListView MaxWidth="350" MinWidth="200" ItemsSource="{Binding Default.ProjectList}" IsItemClickEnabled="True" SelectionMode="None" ItemClick="ProjectsList_ItemClick" >
+			 <ListView.ItemContainerStyle>
+			  <Style TargetType="ListViewItem">
+				<Setter Property="HorizontalContentAlignment" Value="Stretch" />
+				<Setter Property="Margin" Value="0" />
+				<Setter Property="Padding" Value="0" />
+				<Setter Property="CornerRadius" Value="4" />
+			  </Style>
+			 </ListView.ItemContainerStyle>
 			 <ListView.ItemTemplate>
-			  <DataTemplate x:DataType="models:Project">
-				<Grid HorizontalAlignment="Stretch">
+         <DataTemplate x:DataType="models:Project">
+				<Grid HorizontalAlignment="Stretch" Background="Transparent" Padding="4">
 				 <Grid.ContextFlyout>
 				  <MenuFlyout>
-					<MenuFlyoutItem x:Name="Btndeleteproject" Icon="Delete" Click="Btndeleteproject_Click" Text="Remove project" ToolTipService.ToolTip="Remove project from this app" />
 					<MenuFlyoutItem x:Name="BtnOpenInNewInstance" Icon="OpenFile" Click="BtnOpenInNewInstance_Click" Text="Open in new instance" Visibility="{Binding CanOpenInNewInstance, Converter={StaticResource BoolToVisibility}}" />
+					<MenuFlyoutItem x:Name="Btndeleteproject" Icon="Delete" Click="Btndeleteproject_Click" Text="Remove project" ToolTipService.ToolTip="Remove project from this app" />
 				  </MenuFlyout>
 				 </Grid.ContextFlyout>
 				 <StackPanel Orientation="Horizontal" Spacing="6" VerticalAlignment="Center">
 				  <Grid Width="6" VerticalAlignment="Stretch" Visibility="{Binding Default.MultiInstance, Source={StaticResource VM}}">
 					<FontIcon Width="6" Height="6" VerticalAlignment="Center" FontSize="6" Glyph="{h:FI Symbol=PaginationDotSolid10}" Visibility="{x:Bind IsOpenedInAnyInstance, Converter={StaticResource BoolToVisibility}, Mode=OneWay}" />
 				  </Grid>
-				  <TextBlock Grid.Column="0" ToolTipService.ToolTip="{Binding Folder.Path}" Text="{Binding Name}" TextWrapping="NoWrap" VerticalAlignment="Center" FontWeight="{Binding IsCurrentInThisWindow, Converter={StaticResource BoolToFontWeight}}" />
+				  <TextBlock ToolTipService.ToolTip="{Binding Folder.Path}" Text="{Binding Name}" TextWrapping="NoWrap" VerticalAlignment="Center" FontWeight="{Binding IsCurrentInThisWindow, Converter={StaticResource BoolToFontWeight}}" HorizontalAlignment="Stretch" />
 				 </StackPanel>
 				</Grid>
 			  </DataTemplate>

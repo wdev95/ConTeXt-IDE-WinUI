@@ -1979,7 +1979,7 @@ namespace ConTeXt_IDE
 
   private async void Github_Click(object sender, RoutedEventArgs e)
   {
-	bool result = await Launcher.LaunchUriAsync(new System.Uri("https://github.com/WelterDevelopment/ConTeXt-IDE-WinUI"));
+	bool result = await Launcher.LaunchUriAsync(new System.Uri("https://github.com/wdev95/ConTeXt-IDE-WinUI"));
   }
 
   #endregion

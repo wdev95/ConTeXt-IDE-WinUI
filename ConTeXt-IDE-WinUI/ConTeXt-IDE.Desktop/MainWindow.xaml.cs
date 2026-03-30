@@ -38,7 +38,7 @@ public sealed partial class MainWindow : Window
   //var hwnd = WindowNative.GetWindowHandle(this);
   //WindowIconHelper.SetWindowIcon(hwnd, IconPath);
 
-  //AW.SetIcon(IconPath);
+  AW.SetIcon(IconPath);
   //AW.SetPresenter(VM.Default.LastPresenter);
 
   if (AW.Presenter is OverlappedPresenter OP)
