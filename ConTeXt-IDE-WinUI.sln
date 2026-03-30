@@ -1,6 +1,6 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
-VisualStudioVersion = 18.5.11612.153 insiders
+VisualStudioVersion = 18.5.11612.153
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{C7167F0D-BC9F-4E6E-AFE1-012C56B48DB5}") = "ConTeXt-IDE.Desktop_Package", "ConTeXt-IDE-WinUI\ConTeXt-IDE.Desktop_Package\ConTeXt-IDE.Desktop_Package.wapproj", "{2922D040-73B4-467D-9D84-25EAA5B1DB4D}"
 EndProject
