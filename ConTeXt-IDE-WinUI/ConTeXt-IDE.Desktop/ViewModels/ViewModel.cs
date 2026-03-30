@@ -32,6 +32,7 @@ namespace ConTeXt_IDE.ViewModels
  public class ViewModel : Helpers.Bindable
  {
   public string LaunchArguments;
+  public bool SuppressLastActiveProjectOnStartup;
   public ObservableCollection<FileActivatedEventArgs> FileActivatedEvents = new ObservableCollection<FileActivatedEventArgs>() { };
   public ObservableCollection<FileItem> FileItemsTree = new ObservableCollection<FileItem>();
   public ObservableCollection<LogLine> LogLines { get => Get(new ObservableCollection<LogLine>()); set => Set(value); }
@@ -1377,7 +1378,7 @@ namespace ConTeXt_IDE.ViewModels
 	{
 	 bool hasPendingFileActivations = FileActivatedEvents?.Count > 0;
 
-	 if (!hasPendingFileActivations && Default.StartWithLastActiveProject && !string.IsNullOrWhiteSpace(Default.LastActiveProject) && string.IsNullOrWhiteSpace(LaunchArguments))
+  if (!hasPendingFileActivations && !SuppressLastActiveProjectOnStartup && Default.StartWithLastActiveProject && !string.IsNullOrWhiteSpace(Default.LastActiveProject) && string.IsNullOrWhiteSpace(LaunchArguments))
 	 {
 	  RecentAccessList = StorageApplicationPermissions.MostRecentlyUsedList;
 	  if (RecentAccessList.ContainsItem(Default.LastActiveProject))

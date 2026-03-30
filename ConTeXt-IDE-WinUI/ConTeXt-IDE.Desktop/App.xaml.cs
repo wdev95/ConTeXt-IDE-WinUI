@@ -442,6 +442,14 @@ namespace ConTeXt_IDE
 	 string launchProjectPath = (activation.Data as Windows.ApplicationModel.Activation.LaunchActivatedEventArgs)?.Arguments;
 	 if (string.IsNullOrWhiteSpace(launchProjectPath) && activation.Data is ProtocolActivatedEventArgs protocolArgs)
 	  launchProjectPath = TryGetProjectPathFromProtocolActivation(protocolArgs);
+
+	 bool hasPendingFileActivation = activation.Data is FileActivatedEventArgs;
+	 bool hasOtherInstance = VM.Default.MultiInstance && AppInstance.GetInstances().Any(x => !x.IsCurrent);
+	 VM.SuppressLastActiveProjectOnStartup = VM.Default.MultiInstance
+	  && !hasPendingFileActivation
+	  && string.IsNullOrWhiteSpace(launchProjectPath)
+	  && hasOtherInstance;
+
 	 if (VM.Default.MultiInstance
  && !string.IsNullOrWhiteSpace(launchProjectPath)
  && Directory.Exists(launchProjectPath)
