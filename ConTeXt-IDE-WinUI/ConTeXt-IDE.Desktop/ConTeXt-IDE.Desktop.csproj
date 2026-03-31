@@ -195,13 +195,13 @@
 
  <!-- Workaround: WAP packaging project expects shared-project XBF files in bin root,
 		  but the XAML compiler places them in subdirectories (Views\, Models\).
-		  Copy them flat so the packaging build can find them. -->
+		  Copy them flat so the packaging build can find them. 
  <Target Name="CopyXbfToRoot" AfterTargets="CopyGeneratedXaml">
   <ItemGroup>
 	<_XbfInSubDirs Include="$(OutputPath)Views\*.xbf;$(OutputPath)Models\*.xbf" />
   </ItemGroup>
   <Copy SourceFiles="@(_XbfInSubDirs)" DestinationFolder="$(OutputPath)" SkipUnchangedFiles="true" />
- </Target>
+ </Target>-->
 
  <!-- Ensure WinUI compiled XAML binaries are part of publish items used by WAP packaging. -->
  <!--<Target Name="IncludeXbfInPublishItems" BeforeTargets="ComputeFilesToPublish">
